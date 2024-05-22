@@ -19,6 +19,8 @@ Bienvenido al proyecto Biblioteca. Esta es una aplicación en construcción dise
 - **Spring Data JPA:** Para el acceso y manipulación de la base de datos.
 - **MySQL:** Base de datos utilizada para almacenar datos relacionados con la biblioteca.
 - **Maven:** Herramienta de gestión de dependencias y construcción del proyecto.
+- **HTML:** Lenguaje de marcado utilizado para estructurar el contenido web.
+- **Bootstrap:** Framework de CSS utilizado para diseñar y crear la interfaz del usuario. 
 
 ¡Gracias por tu interés!
 
@@ -45,5 +47,7 @@ Welcome to the Library project. This is a work-in-progress application designed 
 - **Spring Data JPA:** For database access and manipulation.
 - **MySQL:** Database used to store data related to the library.
 - **Maven:** Dependency management and project build tool.
+- **HTML:** Markup language used to structure web content.
+- **Bootstrap:** CSS framework used to design and create the user interface. 
 
 Thank you for your interest!
