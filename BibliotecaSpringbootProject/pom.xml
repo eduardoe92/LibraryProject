@@ -8,7 +8,7 @@
         <version>3.1.4</version>
         <relativePath/>
     </parent>
-    <groupId>dev.seba</groupId>
+    <groupId>Libreria</groupId>
     <artifactId>libreria</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>LibraryProject</name>
