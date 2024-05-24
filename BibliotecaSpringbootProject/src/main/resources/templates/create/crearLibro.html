@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo libro - Admin Panel</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #4e5566;
+      }
+      .card-body {
+        background-color: #d0d0d0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row" style="width: 100%">
+      <div
+        class="col-12 col-sm-3 col-md-2"
+        th:insert="~{fragments/sidebar :: sidebar}"
+      ></div>
+      <div class="col-12 col-md-6 col-lg-4 align-content-center">
+        <div class="card shadow">
+          <div class="card-body bg-light-gray">
+            <div class="text-center">
+              <span class="fs-4">Nuevo libro</span>
+            </div>
+            <form action="/libro/registrar" method="post">
+              <label for="isbn" class="form-label">ISBN</label>
+              <input
+                type="number"
+                id="isbn"
+                class="form-control"
+                placeholder="Ingrese ISBN del libro"
+                name="isbn"
+              />
+              <label for="titulo" class="form-label">Titulo</label>
+              <input
+                type="text"
+                id="titulo"
+                class="form-control"
+                placeholder="Ingrese titulo del libro"
+                name="titulo"
+              />
+              <label for="ejemplares" class="form-label">Ejemplares</label>
+              <input
+                type="number"
+                id="ejemplares"
+                class="form-control"
+                placeholder="Ingrese ejemplares del libro"
+                name="ejemplares"
+              />
+              <select
+                class="form-select mt-3"
+                aria-label="Autor"
+                name="idAutor"
+              >
+                <option selected value="">Selecciona un autor</option>
+                <option
+                  th:each="autor : ${autores}"
+                  th:text="${autor.nombre}"
+                  th:value="${autor.uuid}"
+                ></option>
+              </select>
+              <select
+                class="form-select mt-3"
+                aria-label="Editorial"
+                name="idEditorial"
+              >
+                <option selected value="">Selecciona una editorial</option>
+                <option
+                  th:each="editorial : ${editoriales}"
+                  th:text="${editorial.nombre}"
+                  th:value="${editorial.uuid}"
+                ></option>
+              </select>
+              <div class="d-flex mt-3">
+                <a
+                  type="button"
+                  class="btn btn-secondary me-2"
+                  th:href="@{/libro}"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 25 25"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M9 19q-.5 0-.937-.225t-.713-.625l-3.525-5Q3.45 12.625 3.45 12t.375-1.15l3.525-5q.275-.4.713-.625T9 5h10q.825 0 1.413.588T21 7v10q0 .825-.587 1.413T19 19zm5-5.6l1.9 1.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L15.4 12l1.9-1.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L14 10.6l-1.9-1.9q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l1.9 1.9l-1.9 1.9q-.275.275-.275.7t.275.7t.7.275t.7-.275z"
+                    />
+                  </svg>
+                  Volver
+                </a>
+                <button type="submit" class="btn btn-secondary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 25 25"
+                  >
+                    <g fill="none" fill-rule="evenodd">
+                      <path
+                        d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M15.586 3A2 2 0 0 1 17 3.586L19.414 6A2 2 0 0 1 20 7.414V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 5H5v14h2v-5a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v5h2V7.414L15.586 5H15v2.5A1.5 1.5 0 0 1 13.5 9h-4A1.5 1.5 0 0 1 8 7.5zm6 9H9v5h5zm-1-9h-3v2h3z"
+                      />
+                    </g>
+                  </svg>
+                  Guardar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
