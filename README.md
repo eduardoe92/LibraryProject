@@ -1,6 +1,6 @@
 # Proyecto Biblioteca
 
-Bienvenido al proyecto Biblioteca. Esta es una aplicación en construcción diseñada para gestionar una biblioteca digital, permitiendo a los usuarios registrar, actualizar y gestionar sus libros, autores y cuentas de usuario.
+Bienvenido al proyecto Biblioteca. Esta es una aplicación diseñada para gestionar una biblioteca digital, permitiendo a los usuarios registrar, actualizar y gestionar sus libros, autores y cuentas de usuario.
 
 ## Características
 
