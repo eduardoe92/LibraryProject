@@ -28,7 +28,7 @@ Bienvenido al proyecto Biblioteca. Esta es una aplicación diseñada para gestio
 
 # Library Project
 
-Welcome to the Library project. This is a work-in-progress application designed to manage a digital library, allowing users to register, update, and manage their books, authors, and user accounts.
+Welcome to the Library Project. This is an application designed to manage a digital library, allowing users to register, update, and manage their books, authors, and user accounts.
 
 ## Features
 
