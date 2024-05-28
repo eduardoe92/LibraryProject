@@ -20,7 +20,57 @@ Bienvenido al proyecto Biblioteca. Esta es una aplicación diseñada para gestio
 - **MySQL:** Base de datos utilizada para almacenar datos relacionados con la biblioteca.
 - **Maven:** Herramienta de gestión de dependencias y construcción del proyecto.
 - **HTML:** Lenguaje de marcado utilizado para estructurar el contenido web.
-- **Bootstrap:** Framework de CSS utilizado para diseñar y crear la interfaz del usuario. 
+- **Bootstrap:** Framework de CSS utilizado para diseñar y crear la interfaz del usuario.
+
+## Instalación
+### Requisitos
+
+- Java JDK 17 o superior
+- Maven 3.6.0 o superior
+- MySQL 5.7 o superior
+
+### Pasos para Clonar y Configurar el Proyecto
+
+1. Clona el repositorio:
+
+    ```bash
+    git clone https://github.com/eduardoe92/LibraryProject.git
+    cd LibraryProject
+    ```
+
+2. Crea una base de datos en MySQL:
+
+    ```sql
+    CREATE DATABASE library_db;
+    ```
+
+3. Actualiza el archivo `application.properties` en `src/main/resources` con tu configuración de MySQL:
+
+    ```properties
+    spring.datasource.url=jdbc:mysql://localhost:3306/library_db
+    spring.datasource.username=your_username
+    spring.datasource.password=your_password
+
+    spring.jpa.hibernate.ddl-auto=update
+    ```
+
+### Construcción y Ejecución de la Aplicación
+
+1. Navega al directorio del proyecto y construye el proyecto usando Maven:
+
+    ```bash
+    mvn clean install
+    ```
+
+2. Ejecuta la aplicación:
+
+    ```bash
+    mvn spring-boot:run
+    ```
+
+### Acceso a la Aplicación
+
+- Accede a `http://localhost:8080` en tu navegador web para usar la aplicación.
 
 ¡Gracias por tu interés!
 
@@ -48,6 +98,57 @@ Welcome to the Library Project. This is an application designed to manage a digi
 - **MySQL:** Database used to store data related to the library.
 - **Maven:** Dependency management and project build tool.
 - **HTML:** Markup language used to structure web content.
-- **Bootstrap:** CSS framework used to design and create the user interface. 
+- **Bootstrap:** CSS framework used to design and create the user interface.
+
+## Installation
+
+### Requirements
+
+- Java JDK 17 or higher
+- Maven 3.6.0 or higher
+- MySQL 5.7 or higher
+
+### Steps to Clone and Configure the Project
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/eduardoe92/LibraryProject.git
+    cd LibraryProject
+    ```
+
+2. Create a database in MySQL:
+
+    ```sql
+    CREATE DATABASE library_db;
+    ```
+
+3. Update the `application.properties` file in `src/main/resources` with your MySQL configuration:
+
+    ```properties
+    spring.datasource.url=jdbc:mysql://localhost:3306/library_db
+    spring.datasource.username=your_username
+    spring.datasource.password=your_password
+
+    spring.jpa.hibernate.ddl-auto=update
+    ```
+
+### Building and Running the Application
+
+1. Navigate to the project directory and build the project using Maven:
+
+    ```bash
+    mvn clean install
+    ```
+
+2. Run the application:
+
+    ```bash
+    mvn spring-boot:run
+    ```
+
+### Accessing the Application
+
+- Go to `http://localhost:8080` in your web browser to use the application.
 
 Thank you for your interest!
