@@ -1,80 +1,110 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Autores</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous"
-            />
-            <style>
-                body {
-                    background-color: #d0d0d0;
-                }
-            </style>
-    </head>
-    <body>
-        <div class="row" style="width: 100%">
-            <div class="col-12 col-sm-3 col-md-2 ms-auto" th:insert="~{fragments/sidebar :: sidebar}"></div>
-
-            <div class="col m-3">
-                <div class="d-flex">
-                    <span class="fs-4">Autores</span>
-                    <a class="btn btn-secondary ms-3 ms-auto" th:href="@{/autor/crear}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 11h-2q-.425 0-.712-.288T15 10t.288-.712T16 9h2V7q0-.425.288-.712T19 6t.713.288T20 7v2h2q.425 0 .713.288T23 10t-.288.713T22 11h-2v2q0 .425-.288.713T19 14t-.712-.288T18 13zm-9 1q-1.65 0-2.825-1.175T5 8t1.175-2.825T9 4t2.825 1.175T13 8t-1.175 2.825T9 12m-8 6v-.8q0-.85.438-1.562T2.6 14.55q1.55-.775 3.15-1.162T9 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T17 17.2v.8q0 .825-.587 1.413T15 20H3q-.825 0-1.412-.587T1 18"/></svg> Crear autor </a>
-                </div>
-
-                <hr />
-
-                <div th:if="${exito != null}" class="alert alert-success" role="alert">
-                    <span th:text="${exito}"></span>
-                </div>
-                <div th:if="${error != null}" class="alert alert-danger" role="alert">
-                    <span th:text="${error}"></span>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody th:each="autor : ${autores}">
-                            <tr>
-                                <td th:text="${autor.uuid}"></td>
-                                <td th:text="${autor.nombre}"></td>
-                                <td>
-                                    <a class="btn btn-secondary" th:href="@{/autor/actualizar/{uuid}(uuid=${autor.uuid})}">
-                                        Actualizar
-                                    </a>
-                                </td>
-                                <td>
-                                    <form th:action="@{/autor/eliminar/{uuid}(uuid=${autor.uuid})}" method="post">
-                                        <input type="hidden" name="_method" value="delete" />
-                                        <button type="submit" class="btn btn-light">Eliminar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autores</title>
+    <link
+      rel="icon"
+      href="https://images.vexels.com/media/users/3/129507/isolated/preview/d5f2c2da95474e1019312b7dd5c6f987-icono-de-lado-de-libros.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fragments/sidebar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="row" style="width: 100%">
+      <div
+        class="col-12 col-sm-3 col-md-2 ms-auto"
+        th:insert="~{fragments/sidebar :: sidebar}"
+      ></div>
+      <div class="col m-3">
+        <div class="d-flex">
+          <span class="fs-4">Autores</span>
+          <a class="btn btn-secondary ms-3 ms-auto" th:href="@{/autor/crear}"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M18 11h-2q-.425 0-.712-.288T15 10t.288-.712T16 9h2V7q0-.425.288-.712T19 6t.713.288T20 7v2h2q.425 0 .713.288T23 10t-.288.713T22 11h-2v2q0 .425-.288.713T19 14t-.712-.288T18 13zm-9 1q-1.65 0-2.825-1.175T5 8t1.175-2.825T9 4t2.825 1.175T13 8t-1.175 2.825T9 12m-8 6v-.8q0-.85.438-1.562T2.6 14.55q1.55-.775 3.15-1.162T9 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T17 17.2v.8q0 .825-.587 1.413T15 20H3q-.825 0-1.412-.587T1 18"
+              />
+            </svg>
+            Crear autor
+          </a>
         </div>
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+
+        <hr />
+
+        <div th:if="${exito != null}" class="alert alert-success" role="alert">
+          <span th:text="${exito}"></span>
+        </div>
+        <div th:if="${error != null}" class="alert alert-danger" role="alert">
+          <span th:text="${error}"></span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody th:each="autor : ${autores}">
+              <tr>
+                <td th:text="${autor.uuid}"></td>
+                <td th:text="${autor.nombre}"></td>
+                <td>
+                  <a
+                    class="btn btn-secondary"
+                    th:href="@{/autor/actualizar/{uuid}(uuid=${autor.uuid})}"
+                  >
+                    Actualizar
+                  </a>
+                </td>
+                <td>
+                  <form
+                    th:action="@{/autor/eliminar/{uuid}(uuid=${autor.uuid})}"
+                    method="post"
+                  >
+                    <input type="hidden" name="_method" value="delete" />
+                    <button type="submit" class="btn btn-light">
+                      Eliminar
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

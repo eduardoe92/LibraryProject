@@ -1,47 +1,36 @@
-<nav
-  id="sidebarMenu"
-  class="d-md-block bg-dark sidebar"
-  th:fragment="sidebar"
-  style="height: 100vh"
->
-  <div class="position-sticky pt-3 text-center">
-    <div class="mt-3 ms-auto">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Open_book_nae_02.svg/800px-Open_book_nae_02.svg.png"
-        alt="Logo de librería"
-        class="img-fluid"
-      />
-    </div>
-    <span class="fs-4 text-white" th:text="${usuario.rol}"></span>
-      <ul class="nav flex-column">
-      <li class="nav-item btn btn-secondary my-1 mx-3">
-        <a href="/prestamo/activos" class="nav-link text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30"><path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z"/></svg></span>Inicio</a>
-      </li>
-      <li class="nav-item btn btn-secondary my-1 mx-3">
-        <a href="/libro" class="nav-link text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30"><path fill="currentColor" d="M7.5 22q-1.45 0-2.475-1.025T4 18.5v-13q0-1.45 1.025-2.475T7.5 2H20v15q-.625 0-1.062.438T18.5 18.5t.438 1.063T20 20v2zm.5-7h2V4H8zm-.5 5h9.325q-.15-.35-.237-.712T16.5 18.5q0-.4.075-.775t.25-.725H7.5q-.65 0-1.075.438T6 18.5q0 .65.425 1.075T7.5 20"/></svg>Libros</a>
-      </li>
-      <li class="nav-item btn btn-secondary my-1 mx-3">
-        <a href="/autor" class="nav-link text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30"><path fill="currentColor" d="M9.775 12q-.9 0-1.5-.675T7.8 9.75l.325-2.45q.2-1.425 1.3-2.363T12 4t2.575.938t1.3 2.362l.325 2.45q.125.9-.475 1.575t-1.5.675zM4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"/></svg>Autores</a>
-      </li>
-      <li class="nav-item btn btn-secondary my-1 mx-3">
-        <a href="/editorial" class="nav-link text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30"><path fill="currentColor" d="M6 22q-.825 0-1.412-.587T4 20V4q0-.825.588-1.412T6 2h12q.825 0 1.413.588T20 4v16q0 .825-.587 1.413T18 22zm5-18v6.125q0 .3.238.438t.512-.013l1.225-.725q.25-.15.513-.15t.512.15l1.225.725q.275.15.525.013t.25-.438V4z"/></svg>Editoriales</a>
-      </li>
-      <li class="nav-item btn btn-secondary my-1 mx-3">
-        <a href="/cliente" class="nav-link text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30"><path fill="currentColor" d="M1 20v-2.8q0-.85.438-1.562T2.6 14.55q1.55-.775 3.15-1.162T9 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T17 17.2V20zm18 0v-3q0-1.1-.612-2.113T16.65 13.15q1.275.15 2.4.513t2.1.887q.9.5 1.375 1.112T23 17v3zM9 12q-1.65 0-2.825-1.175T5 8t1.175-2.825T9 4t2.825 1.175T13 8t-1.175 2.825T9 12m10-4q0 1.65-1.175 2.825T15 12q-.275 0-.7-.062t-.7-.138q.675-.8 1.038-1.775T15 8t-.362-2.025T13.6 4.2q.35-.125.7-.163T15 4q1.65 0 2.825 1.175T19 8"/></svg>Clientes</a>
-      </li>
-      <li class="nav-item btn btn-secondary my-1 mx-3">
-        <a href="/prestamo" class="nav-link text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path fill="currentColor" d="M2 6.75A2.75 2.75 0 0 1 4.75 4h10.5A2.75 2.75 0 0 1 18 6.75V8H2zM2 9h12.5a3 3 0 0 0-2.227 5.01A2.5 2.5 0 0 0 10.05 16h-5.3A2.75 2.75 0 0 1 2 13.25zm14.5 3a2 2 0 1 1-4 0a2 2 0 0 1 4 0m1.5 4.5c0 1.245-1 2.5-3.5 2.5S11 17.75 11 16.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5"/></svg>Prestamos</a>
-      </li>
-      <li class="nav-item btn btn-light my-1 mx-3">
-        <a th:href="@{/logout}" class="nav-link text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M9.002 7c.012-2.175.109-3.353.877-4.121C10.758 2 12.172 2 15 2h1c2.829 0 4.243 0 5.122.879C22 3.757 22 5.172 22 8v8c0 2.828 0 4.243-.878 5.121C20.242 22 18.829 22 16 22h-1c-2.828 0-4.242 0-5.121-.879c-.768-.768-.865-1.946-.877-4.121"/><path stroke-linejoin="round" d="M15 12H2m0 0l3.5-3M2 12l3.5 3"/></g></svg>Cerrar sesión</a>
-      </li>
-      </ul>
-  </div>
+<nav th:fragment="sidebar">
+  <aside>
+      <p>Biblioteca Virtual</p>
+      <span class="fs-4 text-white" th:text="${usuario.rol}"></span>
+      <a href="/prestamo/activos">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          Inicio
+      </a>
+      <a href="/libro">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          Libros
+      </a>
+      <a href="/autor">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Autores
+      </a>
+      <a href="/editorial">
+          <i class="fa fa-building" aria-hidden="true"></i>
+          Editoriales
+      </a>
+      <a href="/cliente">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          Clientes
+      </a>
+      <a href="/prestamo">
+          <i class="fa fa-exchange-alt" aria-hidden="true"></i>
+          Préstamos
+      </a>
+      <div class="logout-container">
+          <a th:href="@{/logout}">
+              <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+              Cerrar Sesión
+          </a>
+      </div>
+  </aside>
 </nav>
