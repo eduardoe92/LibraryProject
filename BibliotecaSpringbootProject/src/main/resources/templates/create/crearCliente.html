@@ -29,13 +29,12 @@
         class="col-12 col-sm-3 col-md-2 ms-auto"
         th:insert="~{fragments/sidebar :: sidebar}"
       ></div>
-      <div class="col-12 col-md-6 col-lg-4 align-content-center">
-        <div class="card shadow">
-          <div class="card-body bg-light-gray">
-            <div class="text-center">
-              <span class="fs-4">Nuevo cliente</span>
-            </div>
-            <hr />
+      <div class="col m-3">
+        <div class="card-body bg-light-gray">
+          <div class="text-center">
+            <span class="fs-4">Nuevo Cliente</span>
+          </div>
+          <hr />
             <form action="/cliente/registrar" method="post">
               <div class="mb-3">
                 <label for="dni" class="form-label">DNI</label>
@@ -70,6 +69,7 @@
                   required
                 />
               </div>
+              <hr>
               <div class="d-flex mt-3">
                 <a
                   type="button"
@@ -113,7 +113,6 @@
           </div>
         </div>
       </div>
-    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
