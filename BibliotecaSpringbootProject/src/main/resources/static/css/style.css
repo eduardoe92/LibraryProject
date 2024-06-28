@@ -15,18 +15,19 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .welcome-section .card-body {
     background-color: #ffffff;
 }
+
 .modal-dialog {
     margin-top: calc(10vh - 100px);
 }
 
 .content {
     padding: 20px;
-    margin-left: 50px;
+    margin-left: 270px;
 }
-
 
 .page-title {
     margin-bottom: 20px;
@@ -115,6 +116,11 @@ aside p {
     padding: 40px 0;
 }
 
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
 /*------------------*/
 /*------FOOTER------*/
 /*------------------*/
@@ -124,17 +130,20 @@ footer {
     color: #ffffff;
     padding: 20px 0;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .social-icons a {
     color: #ffffff;
     margin: 0 10px;
     text-decoration: none;
     font-size: 1.5rem;
 }
+
 .social-icons a:hover {
     color: #ddd;
 }
@@ -164,7 +173,7 @@ footer {
 /*----RESPONSIVE----*/
 /*------------------*/
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .content {
         margin-left: 0;
         padding-top: 60px;
@@ -174,14 +183,14 @@ footer {
         width: 100%;
         height: auto;
         position: relative;
-        background-image: none;
-        background-color: #000;
+        background-color: #343a40;
         border-top-right-radius: 0;
     }
 
     aside p {
         font-size: 20px;
         text-align: center;
+        margin-top: 20px;
     }
 
     aside a {
@@ -189,4 +198,4 @@ footer {
         text-align: center;
         padding: 10px 0;
     }
-}
+} */

@@ -24,11 +24,8 @@
     />
   </head>
   <body>
-    <div class="row" style="width: 100%">
-      <div
-        class="col-12 col-sm-3 col-md-2 ms-auto"
-        th:insert="~{fragments/sidebar :: sidebar}"
-      ></div>
+    <aside th:insert="~{fragments/sidebar :: sidebar}"></aside>
+    <div class="main-content">
       <div class="col m-3">
         <span class="fs-4">Editar autor</span>
         <hr />
@@ -45,7 +42,7 @@
             th:value="${autor.nombre}"
             name="nombre"
           />
-          <hr>
+          <hr />
           <div class="d-flex mt-3">
             <a type="button" class="btn btn-secondary me-2" th:href="@{/autor}">
               Volver

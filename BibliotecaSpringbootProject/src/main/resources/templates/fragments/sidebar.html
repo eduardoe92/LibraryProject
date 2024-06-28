@@ -1,36 +1,36 @@
 <nav th:fragment="sidebar">
   <aside>
-      <p>Biblioteca Virtual</p>
-      <span class="fs-4 text-white" th:text="${usuario.rol}"></span>
-      <a href="/prestamo/activos">
-          <i class="fa fa-home" aria-hidden="true"></i>
-          Inicio
+    <p>Biblioteca Virtual</p>
+    <span class="fs-4 text-white" th:text="${usuario.rol}"></span>
+    <a href="/prestamo/activos">
+      <i class="fa fa-home" aria-hidden="true"></i>
+      Inicio
+    </a>
+    <a href="/libro">
+      <i class="fa fa-book" aria-hidden="true"></i>
+      Libros
+    </a>
+    <a href="/autor">
+      <i class="fa fa-user" aria-hidden="true"></i>
+      Autores
+    </a>
+    <a href="/editorial">
+      <i class="fa fa-building" aria-hidden="true"></i>
+      Editoriales
+    </a>
+    <a href="/cliente">
+      <i class="fa fa-users" aria-hidden="true"></i>
+      Clientes
+    </a>
+    <a href="/prestamo">
+      <i class="fa fa-exchange-alt" aria-hidden="true"></i>
+      Préstamos
+    </a>
+    <div class="logout-container">
+      <a th:href="@{/logout}">
+        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+        Cerrar Sesión
       </a>
-      <a href="/libro">
-          <i class="fa fa-book" aria-hidden="true"></i>
-          Libros
-      </a>
-      <a href="/autor">
-          <i class="fa fa-user" aria-hidden="true"></i>
-          Autores
-      </a>
-      <a href="/editorial">
-          <i class="fa fa-building" aria-hidden="true"></i>
-          Editoriales
-      </a>
-      <a href="/cliente">
-          <i class="fa fa-users" aria-hidden="true"></i>
-          Clientes
-      </a>
-      <a href="/prestamo">
-          <i class="fa fa-exchange-alt" aria-hidden="true"></i>
-          Préstamos
-      </a>
-      <div class="logout-container">
-          <a th:href="@{/logout}">
-              <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-              Cerrar Sesión
-          </a>
-      </div>
+    </div>
   </aside>
 </nav>

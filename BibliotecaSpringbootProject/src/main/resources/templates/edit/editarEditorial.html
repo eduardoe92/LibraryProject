@@ -24,11 +24,8 @@
     />
   </head>
   <body>
-    <div class="row" style="width: 100%">
-      <div
-        class="col-12 col-sm-3 col-md-2 ms-auto"
-        th:insert="~{fragments/sidebar :: sidebar}"
-      ></div>
+    <aside th:insert="~{fragments/sidebar :: sidebar}"></aside>
+    <div class="main-content">
       <div class="col m-3">
         <span class="fs-4">Editar editorial</span>
         <hr />
